@@ -20,7 +20,7 @@ int main()
 
 
 
-̰��+����
+贪心+二分
 
 #include <cmath>
 #include <cstdio>
@@ -35,7 +35,7 @@ int low[maxn], a[maxn];
 int n, ans;
  
 int binary_search(int *a, int r, int x)
-//���ֲ��ң�����a�����е�һ��>=x��λ�� 
+//二分查找，返回a数组中第一个>=x的位置 
 {
     int l = 1, mid;
     while(l <= r)
@@ -55,22 +55,23 @@ int main()
     for(int i=1; i<=n; i++) 
     {
         scanf("%d", &a[i]); 
-        low[i] = INF;   //����low�д������Сֵ������low��ʼ��ΪINF 
+        low[i] = INF;   //由于low中存的是最小值，所以low初始化为INF 
     }
     low[1] = a[1]; 
-    ans = 1;   //��ʼʱLIS����Ϊ1 
+    ans = 1;   //初始时LIS长度为1 
     for(int i=2; i<=n; i++)
     {
-        if(a[i] > low[ans])    //��a[i]>=low[ans]��ֱ�Ӱ�a[i]�ӵ����� 
+        if(a[i] > low[ans])    //若a[i]>=low[ans]，直接把a[i]接到后面 
             low[++ans] = a[i];
-        else       //�����ҵ�low�е�һ��>=a[i]��λ��low[j]����a[i]����low[j] 
+        else       //否则，找到low中第一个>=a[i]的位置low[j]，用a[i]更新low[j] 
             low[binary_search(low, ans, a[i])] = a[i];
     }
-    printf("%d\n", ans);   //����� 
+    printf("%d\n", ans);   //输出答案 
     return 0;
 }
 
-��C++�Դ�����lower_bound( )������
+
+用C++自带函数lower_bound( )函数。
 #include<stdio.h>  
 #include<string.h>  
 #include<algorithm>  
@@ -98,8 +99,8 @@ int main()
     return 0;  
 }  
   
-����㷨��ʵ�Ѿ�����DP�ˣ��е���̰�ġ����ڸ��ӶȽ�����ʵ����Ϊ����㷨�����õ��˶���������
-������N����Ҫ������O(n)��ÿ�μ���Ҫ����N�λ���O(n)��һ������O(n^2)��
-��������������O(logn)�Ķ����������ܵĸ��ӶȾͱ�ΪO(nlogn)�ˡ�
-������Ҫע��һ��lower_bound������Ӧ�ã�ע���ȥ��g�ǵ�ַ��
-��ַ - ��ַ = �±ꡣ
+这个算法其实已经不是DP了，有点像贪心。至于复杂度降低其实是因为这个算法里面用到了二分搜索。
+本来有N个数要处理是O(n)，每次计算要查找N次还是O(n)，一共就是O(n^2)；
+现在搜索换成了O(logn)的二分搜索，总的复杂度就变为O(nlogn)了。
+这里主要注意一下lower_bound函数的应用，注意减去的g是地址。
+地址 - 地址 = 下标。
