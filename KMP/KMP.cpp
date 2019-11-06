@@ -1,6 +1,6 @@
-prefix�������һ���ַ�����1���ַ���n-1���ַ��������ǰ׺��prefix[0]�� -1.
-i ��  j �ֱ�ָ��ԭ�ַ�����ƥ��λ�ã��Լ�ƥ���ַ�����ƥ��λ�á�
-һ��һ�����ƥ�䡣 ������ͬ���� j = prefix[j]�� ����ƥ���ַ�����ƥ��λ��ָ��prefix[j]������ԭ�ַ���ƥ��λ�ö��롣 Ҳ����˵i��jʼ��Ҫ���롣
+prefix数组就是一个字符串从1个字符到n-1个字符的最长公共前缀，prefix[0]补 -1.
+i 和  j 分别指向原字符串的匹配位置，以及匹配字符串的匹配位置。
+一个一个向后匹配。 若不相同，则 j = prefix[j]， 即让匹配字符串的匹配位置指向prefix[j]，并与原字符串匹配位置对齐。 也就是说i，j始终要对齐。
 
 int n, m, prefix[maxn];
 char s[maxn], in[maxn];
@@ -36,22 +36,22 @@ void KMP() {
             j = prefix[j];
         }
         if(j == m) {
-            ans++;  //�Ѿ��ҵ�ƥ���һ���ַ���
-            j = 0;  //�������²��ң����ҹ��Ĳ��ظ�
-  ��j=prefix[j];) // �����ң����ҹ��Ŀ��ظ�
+            ans++;  //已经找到匹配的一个字符串
+            j = 0;  //继续往下查找，与找过的不重复
+  （j=prefix[j];) // 继续找，与找过的可重复
         }
     }
 }
-�� azazaza  �����м���aza
-���ҹ��Ĳ��ظ������ҵ�����
-���ҹ����ظ������ҵ�����
+如 azazaza  中找有几个aza
+与找过的不重复，则找到俩个
+与找过的重复，则找到三个
 
 
 
-����
-aaa  ��Ҫ��0��������ѭ��
-abca  ��Ҫ��2��������ѭ��
-abcde ��Ҫ��5��������ѭ��
+例：
+aaa  需要补0个，构成循环
+abca  需要补2个，构成循环
+abcde 需要补5个，构成循环
 int p = prefix[n];
 if(n % (n - p) == 0){
          printf("0");
@@ -60,4 +60,4 @@ if(n % (n - p) == 0){
 }else{
         printf("%d", (n - p - n % (n - p)));
 }
-�� n - p ��Ϊһ��ѭ���ڵĳ���
+即 n - p 就为一个循环节的长度
