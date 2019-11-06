@@ -1,5 +1,3 @@
-
-��֨֨֨֨ 2019/4/13 8:24:30
     string a, b;
     int aa[maxn], bb[maxn], result[2 * maxn];
     while(cin >> a >> b) {
