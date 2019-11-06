@@ -1,13 +1,3 @@
-void init(){
-    re[0] = 1;
-    for(int i = 1; i <= 19 ; i++){
-        for(int j = 0; j < i ; j++){
-            re[i] += re[j] * re[i - j - 1];
-        }
-    }
-}
-
- 
 void DO(int pstr, int len, int pst, int pt){
 	if(pt == len){
 		t[pt] = 0;
