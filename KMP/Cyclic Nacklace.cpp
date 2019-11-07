@@ -1,4 +1,4 @@
-#HDU 3746
+//HDU 3746
 Problem Description
 CC always becomes very depressed at the end of this month, he has checked his credit card yesterday, without any surprise, there are only 
 99.9 yuan left. he is too distressed and thinking about how to tide over the last days. Being inspired by the entrepreneurial spirit of 
