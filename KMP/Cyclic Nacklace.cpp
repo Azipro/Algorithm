@@ -12,7 +12,7 @@ girls' lively, and the most important thing is that it must be connected by a cy
 connected from the left to right. And the cyclic count must be more than one. If you connect the leftmost pearl and the rightmost pearl 
 of such chain, you can make a CharmBracelet. Just like the pictrue below, this CharmBracelet's cycle is 9 and its cyclic count is 2:
 
-http://acm.hdu.edu.cn/data/images/C319-1003-1.jpg
+ 
 Now CC has brought in some ordinary bracelet chains, he wants to buy minimum number of pearls to make CharmBracelets so that he can save
 more money. but when remaking the bracelet, he can only add color pearls to the left end and right end of the chain, that is to say, 
 adding to the middle is forbidden.
