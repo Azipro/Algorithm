@@ -9,8 +9,8 @@ Your task is to determine how many swap operations Ultra-QuickSort needs to perf
 
 
 Input
-The input contains several test cases. Every test case begins with a line that contains a single integer n < 500,000 -- the length of the 
-input sequence. Each of the the following n lines contains a single integer 0 ≤ a[i] ≤ 999,999,999, the i-th input sequence element. 
+The input contains several test cases. Every test case begins with a line that contains a single integer n < 500,000 -- the length of 
+the input sequence. Each of the the following n lines contains a single integer 0 ≤ a[i] ≤ 999,999,999, the i-th input sequence element.
 Input is terminated by a sequence of length n = 0. This sequence must not be processed.
 
 Output
@@ -34,7 +34,7 @@ Sample Output
 6
 0
 
-```
+
 #include<iostream>
 #include<cstdio>
 #include<cmath>
@@ -88,4 +88,4 @@ int main() {
     }
     return 0;
 }
-```
+
