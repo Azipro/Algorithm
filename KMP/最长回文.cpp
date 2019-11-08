@@ -26,7 +26,6 @@ Sample Output
 
 
 
-
 #include<iostream>
 #include<cstdio>
 #include<cmath>
