@@ -43,6 +43,7 @@ Sample Output
 1
 
 
+//二维树状数组，也可以用二维线段树写
 #include<iostream>
 #include<cstdio>
 #include<cmath>
