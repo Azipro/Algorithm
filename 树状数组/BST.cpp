@@ -7,7 +7,7 @@ last level, and we can also find the maximum number by going down the right node
 
 Input
 In the input, the first line contains an integer N, which represents the number of queries. In the next N lines, each contains a number 
-representing a subtree with root number X (1 <= X <= 231 - 1).
+representing a subtree with root number X (1 <= X <= 2^31 - 1).
 
 Output
 There are N lines in total, the i-th of which contains the answer for the i-th query.
