@@ -1,5 +1,6 @@
 /*博弈论极大极小算法
   对抗搜索
+  数据大的话，需要使用alpha-beta剪枝
 */
 
 #include<iostream>
