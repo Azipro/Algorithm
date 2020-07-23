@@ -15,14 +15,11 @@ void Quick_sort(vector<int> &v, int l, int r){
 }
 
 int main(){
-    int n, t;
+    int n;
     vector<int> v;
-    v.clear();
     cin >> n;
-    for(int i = 0 ; i < n ; i++) {
-        cin >> t;
-        v.push_back(t);
-    }
+    v.resize(n);
+    for(int i = 0 ; i < n ; i++) cin >> v[i];
     Quick_sort(v, 0, v.size() - 1);
     for(auto i : v) cout << i << " ";
     cout << endl;
